@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <HelloWorld/>
-        <!-- <ConditionalRendering/> -->
+        <!-- <HelloWorld/> -->
+        <ConditionalRendering/>
     </div>
 </template>
 
