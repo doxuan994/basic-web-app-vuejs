@@ -6,7 +6,8 @@
 
         <div>
             <input type="text" id="itemForm" @keypress.enter="addItem" v-model="item.text">
-            <button @click="addItem">Add Dinosaur</button>
+            <!-- <input type="text" id="itemForm" @keypress.enter="addItem" v-model="input"> -->
+            <button @click="addItem">{{ buttonText }}</button>
         </div>
 
 
@@ -57,6 +58,9 @@
 </template>
 
 <script>
+import _ from 'lodash';
+
+
 export default {
     name: 'HelloWorld',
     data () {
@@ -88,7 +92,9 @@ export default {
             totalDinos: 0,
             totalSpecies: 0,
             dinosUpdated: 0,
-            speciesUpdated: 0
+            speciesUpdated: 0,
+            buttonText: "Add Dinosaur",
+            input: ""
         }
     },
     methods: {
@@ -139,6 +145,11 @@ export default {
             this.speciesUpdated += 1;
             return this.items.length;
         }
+    },
+    watch: {
+        input: _.debounce(function() {
+            this.buttonText = this.input !== "" ? "Add " + this.input : "Add Dinosaur";
+        }, 250)
     }
 }
 </script>
@@ -169,6 +180,7 @@ button, input {
 .content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 

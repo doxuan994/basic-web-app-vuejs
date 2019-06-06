@@ -1,16 +1,19 @@
 <template>
     <div id="app">
         <HelloWorld/>
+        <!-- <ConditionalRendering/> -->
     </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import ConditionalRendering from './components/ConditionalRendering'
 
 export default {
     name: 'App',
     components: {
-        HelloWorld
+        HelloWorld,
+        ConditionalRendering
     }
 }
 </script>
