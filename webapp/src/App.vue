@@ -1,19 +1,24 @@
 <template>
     <div id="app">
         <!-- <HelloWorld/> -->
-        <ConditionalRendering/>
+        <!-- <Class/> -->
+        <HandleDOMEvents/>
     </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Class from './components/Class'
 import ConditionalRendering from './components/ConditionalRendering'
+import HandleDOMEvents from './components/HandleDOMEvents'
 
 export default {
     name: 'App',
     components: {
         HelloWorld,
-        ConditionalRendering
+        Class,
+        ConditionalRendering,
+        HandleDOMEvents
     }
 }
 </script>
